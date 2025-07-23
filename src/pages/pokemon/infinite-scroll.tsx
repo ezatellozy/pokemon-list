@@ -46,7 +46,7 @@ export default function InfiniteScroll() {
       .reduce((acc, cur) => acc + cur, 0) || 0;
 
   return (
-    <div className="bg-green-100 py-5">
+    <div className="bg-green-100 py-4">
       <div className="container mx-auto space-y-4">
         <PageMeta title="Pokémon List" description="This is Pokémon List" />
         <PokedexHeader />

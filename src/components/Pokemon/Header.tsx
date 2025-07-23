@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { LightningIcon } from "../../icons";
 
 const PokedexHeader = () => {
+  const activeLink =
+    "px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800";
+  const normalLink =
+    "px-4 py-2 border border-black rounded-md bg-white text-black hover:bg-gray-100";
+
   return (
     <div className="text-center py-10">
       <div className="flex justify-center items-center gap-2 text-3xl font-bold text-gray-800">
@@ -13,18 +18,18 @@ const PokedexHeader = () => {
       </p>
 
       <div className="flex justify-center mt-6 gap-4">
-        <Link
+        <NavLink
           to="/"
-          className="px-4 py-2 border border-black rounded-md bg-white text-black hover:bg-gray-100"
+          className={({ isActive }) => (isActive ? activeLink : normalLink)}
         >
           Page Controls
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/infinite-scroll"
-          className="px-4 py-2 rounded-md bg-black text-white hover:bg-gray-800"
+          className={({ isActive }) => (isActive ? activeLink : normalLink)}
         >
           Infinite Scroll
-        </Link>
+        </NavLink>
       </div>
     </div>
   );
